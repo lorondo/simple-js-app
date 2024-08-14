@@ -17,9 +17,9 @@ let pokemonList = [
 ];
 for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height >= 200) { //checks height and adds additional statement if they are tall
-        document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm) - Wow, that's big!");
+        document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm) - Wow, that's big!<br>");
     } else {
-        document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm) ");
+        document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm)<br>");
     }       
 }
  
