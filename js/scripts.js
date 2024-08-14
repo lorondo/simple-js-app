@@ -17,6 +17,6 @@
         }
     ];
     for (let i = 0; i < pokemonList.length; i++) {
-        document.write(pokemonList[name]] + " (height: " + pokemonList[height] + " cm)");
+        document.write(pokemonList.name + " (height: " + pokemonList.height + "cm)");
     }
  
