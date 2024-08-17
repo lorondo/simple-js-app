@@ -28,7 +28,7 @@ function divide (dividend, divisor){
     if (divisor === 0){
         return "You're trying to divide by zero."
     } else {
-        let result = divedend / divisor;
+        let result = dividend / divisor;
         return result; 
     }   
 }
