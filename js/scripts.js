@@ -15,6 +15,7 @@ let pokemonList = [
         types: ['grass', 'poison']
     }
 ];
+
 for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height >= 200) { //checks height and adds additional statement if they are tall
         document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm) - Wow, that's big!<br>");
@@ -24,9 +25,9 @@ for (let i = 0; i < pokemonList.length; i++) {
 }
 
 function divide (dividend, divisor){
-    id (divisor === 0){
+    if (divisor === 0){
         return "You're trying to divide by zero."
-    }else{
+    } else {
         let result = divedend / divisor;
         return result; 
     }   
