@@ -22,4 +22,17 @@ for (let i = 0; i < pokemonList.length; i++) {
         document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm)<br>");
     }       
 }
- 
+
+function divide (dividend, divisor){
+    id (divisor === 0){
+        return "You're trying to divide by zero."
+    }else{
+        let result = divedend / divisor;
+        return result; 
+    }   
+}
+
+console.log(divide(4, 2));
+console.log(divide(7, 0));
+console.log(divide(1, 4));
+console.log(divide(12, -3));
