@@ -17,16 +17,12 @@ let pokemonList = [
 ];
 
 pokemonList.forEach(function(pokemon){
-    document.write(pokemon.name + " (Height: " + pokemon.height + " cm)<br>");
+    if (pokemon.height >= 200) { //checks height and adds additional statement if they are tall
+        document.write(pokemon.name + " (Height: " + pokemon.height + " cm) - Wow, that's big!<br>");
+    } else {
+        document.write(pokemon.name + " (Height: " + pokemon.height + " cm)<br>");
+    }     
 });
-
-//for (let i = 0; i < pokemonList.length; i++) {
-    //if (pokemonList[i].height >= 200) { //checks height and adds additional statement if they are tall
-        //document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm) - Wow, that's big!<br>");
-    //} else {
-    //    document.write(pokemonList[i].name + " (Height: " + pokemonList[i].height + " cm)<br>");
-    //}       
-//}
 
 function divide (dividend, divisor){
     if (divisor === 0){
