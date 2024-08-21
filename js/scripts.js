@@ -1,22 +1,37 @@
-let pokemonList = [
-    {
-        name: 'Bulbasaur', 
-        height: 71.12, //in cm
-        types: ['grass', 'poison']
-    },
-    {
-        name: 'Ivysaur', 
-        height: 99.06, //in cm
-        types: ['grass', 'poison']
-    },
-    {
-        name: 'Venusaur', 
-        height: 200.66, //in cm
-        types: ['grass', 'poison']
+let pokemonRepository = (function() {
+    let pokemonList = [
+        {
+            name: 'Bulbasaur', 
+            height: 71.12, //in cm
+            types: ['grass', 'poison']
+        },
+        {
+            name: 'Ivysaur', 
+            height: 99.06, //in cm
+            types: ['grass', 'poison']
+        },
+        {
+            name: 'Venusaur', 
+            height: 200.66, //in cm
+            types: ['grass', 'poison']
+        }
+    ];
+    
+    function add(pokemon){
+        pokemonList.push(pokemon);
     }
-];
+    
+    function getAll() {
+        return pokemonList;
+    }
 
-pokemonList.forEach(function(pokemon){
+    return {
+        add:add,
+        getAll:getAll,
+    };
+})();
+
+pokemonRepository.getAll().forEach(function(pokemon){
     if (pokemon.height >= 200) { //checks height and adds additional statement if they are tall
         document.write(pokemon.name + " (Height: " + pokemon.height + " cm) - Wow, that's big!<br>");
     } else {
