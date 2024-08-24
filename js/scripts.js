@@ -32,14 +32,13 @@ let pokemonRepository = (function() {
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon){
-    let pokemon = document.querySelector(".pokemon-list");
+    let newElement = document.querySelector('.pokemon-list');
     let listItem = document.createElement('li');
     let button = document.createElement('button');
-    button.innerText = pokemonlist.name;
-    button.classList.add(button-style)
-    button.appendChild(listItem);
-    listItem.appendChild(".pokemon-list");
-    
+    button.innerText = pokemon.name;
+    button.classList.add('pokemon-button');
+    listItem.appendChild(button);
+    newElement.appendChild(listItem);
 });
 
 function divide (dividend, divisor){
