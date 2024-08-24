@@ -32,11 +32,14 @@ let pokemonRepository = (function() {
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon){
-    if (pokemon.height >= 200) { //checks height and adds additional statement if they are tall
-        document.write(pokemon.name + " (Height: " + pokemon.height + " cm) - Wow, that's big!<br>");
-    } else {
-        document.write(pokemon.name + " (Height: " + pokemon.height + " cm)<br>");
-    }     
+    let pokemon = document.querySelector(".pokemon-list");
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemonlist.name;
+    button.classList.add(button-style)
+    button.appendChild(listItem);
+    listItem.appendChild(".pokemon-list");
+    
 });
 
 function divide (dividend, divisor){
