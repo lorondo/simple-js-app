@@ -25,20 +25,25 @@ let pokemonRepository = (function() {
         return pokemonList;
     }
 
+    function addListItem(pokemon) {
+        let newElement = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('pokemon-button');
+        listItem.appendChild(button);
+        newElement.appendChild(listItem);
+    }
+
     return {
         add:add,
         getAll:getAll,
+        addListItem,
     };
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon){
-    let newElement = document.querySelector('.pokemon-list');
-    let listItem = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('pokemon-button');
-    listItem.appendChild(button);
-    newElement.appendChild(listItem);
+   pokemonRepository.addListItem(pokemon);
 });
 
 function divide (dividend, divisor){
