@@ -8,6 +8,12 @@ body {
     background-color: #f0f0f0;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .pokemon-button {
     background-color: #4CAF50; /* Green background */
     border: none; /* Remove borders */
@@ -21,7 +27,6 @@ body {
     cursor: pointer; /* Add a pointer cursor on hover */
     border-radius: 8px; /* Rounded corners */
     transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
-    list-style-type: none; /*removes the dots on list items */
 }
 
 .pokemon-button:hover {
