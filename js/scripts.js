@@ -31,14 +31,24 @@ let pokemonRepository = (function() {
         let button = document.createElement('button');
         button.innerText = pokemon.name;
         button.classList.add('pokemon-button');
+
+        button.addEventListener('click', function (event) {
+            showDetails(pokemon);
+          });
+
         listItem.appendChild(button);
         newElement.appendChild(listItem);
+    }
+
+    function showDetails(pokemon) {
+        console.log(pokemon.name);
     }
 
     return {
         add:add,
         getAll:getAll,
         addListItem,
+        showDetails,
     };
 })();
 
