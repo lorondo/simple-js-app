@@ -29,7 +29,7 @@ let pokemonRepository = (function() {
         loadDetails(pokemon).then(function() {
             showModal(
                 pokemon.name,
-                "Height: " + pokemon.height * 10 + "cm",
+                'Height: ' + pokemon.height * 10 + 'cm',
                 pokemon.imageUrl
             );
         });
@@ -62,6 +62,16 @@ let pokemonRepository = (function() {
         }).catch(function (e) {
             console.error(e);
         });
+    }
+
+    function showModal(title, text, img) {
+        let modalTitle = document.querySelector('.modal-title');
+        let modalText = document.querySelector('#pokemon-height');
+        let modalImage = document.querySelector('#pokemon-image');
+
+        modalTitle.innerText = title;
+        modalText.innerText = text;
+        modalImage.src = img;
     }
 
     return {
