@@ -27,7 +27,11 @@ let pokemonRepository = (function() {
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function() {
-            console.log(pokemon);
+            showModal(
+                pokemon.name,
+                "Height: " + pokemon.height * 10 + "cm",
+                pokemon.imageUrl
+            );
         });
     }
 
