@@ -37,17 +37,3 @@ ul {
     background-color: #3e8e41; /* Even darker green when clicked */
     transform: scale(0.98); /* Slightly shrink the button when clicked */
 }
-
-.modal-header,
-.modal-footer {
-  background-color: var(--background-color);
-}
-
-#pokemon-height {
-  font-size: x-large;
-  align-content: center;
-}
-
-#pokemon-image {
-  border: solid var(--border-color) 3px;
-}
