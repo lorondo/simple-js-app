@@ -8,15 +8,34 @@ let pokemonRepository = (function() {
         modalContainer.innerHTML = '';
 
         let modal = document.createElement('div');
-        modal.classList.add('modal');
+        modal.classList.add('modal', 'fade', 'show');
+        modal.setAttribute('tabindex', '-1');
+        modal.setAttribute('role', 'dialog');
+
+        let modalDialog = document.createElement('div');
+        modalDialog.classList.add('modal-dialog');
+        modalDialog.setAttribute('role', 'document');
+
+        let modalContent = document.createElement('div');
+        modalContent.classList.add('modal-content');
+
+        let modalHeader = document.createElement('div');
+        modalHeader.classList.add('modal-header');
 
         let closeButtonElement = document.createElement('button');
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innerText = 'Close';
+        closeButtonElement.classList.add('close');
+        closeButtonElement.innerHTML = '&times;';
         closeButtonElement.addEventListener('click', hideModal);
 
-        let titleElement = document.createElement('h1');
+        let titleElement = document.createElement('h5');
+        titleElement.classList.add('modal-title');
         titleElement.innerText = title;
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+
+        let modalBody = document.createElement('div');
+        modalBody.classList.add('modal-body');
 
         let contentElement = document.createElement('p');
         contentElement.innerText = text;
@@ -27,10 +46,14 @@ let pokemonRepository = (function() {
         imageElement.setAttribute("height", "228");
         imageElement.setAttribute("alt", "The pokemon image");
 
-        modal.appendChild(closeButtonElement);
-        modal.appendChild(titleElement);
-        modal.appendChild(contentElement);
-        modal.appendChild(imageElement);
+        modalBody.appendChild(contentElement);
+        modalBody.appendChild(imageElement);
+        
+        modalContent.appendChild(modalHeader);
+        modalContent.appendChild(modalBody);
+
+        modalDialog.appendChild(modalContent);
+        modal.appendChild(modalDialog);
         modalContainer.appendChild(modal);
 
         modalContainer.classList.add('is-visible');
@@ -64,9 +87,13 @@ let pokemonRepository = (function() {
     function addListItem(pokemon) {
         let newElement = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
+        
+        listItem.classList.add('list-group-item');
+        
         let button = document.createElement('button');
         button.innerText = pokemon.name;
-        button.classList.add('pokemon-button');
+        
+        button.classList.add('pokemon-button', 'btn', 'btn-primary');
         listItem.appendChild(button);
         newElement.appendChild(listItem);
 
