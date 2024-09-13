@@ -2,34 +2,12 @@ let pokemonRepository = (function() {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-    let modalContainer = document.querySelector('#modal-container');
-
     function showModal(title, text, img) {
-        // Update modal content with Pokémon details
     document.getElementById('modal-pokemon-name').innerText = title;
     document.getElementById('modal-pokemon-height').innerText = text;
     document.getElementById('modal-pokemon-image').src = img;
-
-    // Use Bootstrap's modal show method to ensure modal opens correctly
     $('#pokemonModal').modal('show');
     }
-
-    function hideModal() {
-        modalContainer.classList.remove('is-visible');
-    }
-
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-            hideModal();
-        }
-    });
-
-    modalContainer.addEventListener('click', (e) => {
-        let target = e.target;
-        if (target === modalContainer) {
-            hideModal();
-        }
-    });
     
     function add(pokemon){
         pokemonList.push(pokemon);
@@ -50,26 +28,23 @@ let pokemonRepository = (function() {
         
         button.classList.add('pokemon-button', 'btn', 'btn-primary');
         
-        // Add Bootstrap's data-toggle and data-target attributes for modal functionality
+        // Added data-toggle and data-target attributes for modal functionality
         button.setAttribute('data-toggle', 'modal');
-        button.setAttribute('data-target', '#pokemonModal');  // Target the Bootstrap modal
+        button.setAttribute('data-target', '#pokemonModal');  // Targets the Bootstrap modal
 
         listItem.appendChild(button);
         newElement.appendChild(listItem);
 
-        // Add event listener to populate modal when button is clicked
+        // Event listener to populate modal when button is clicked
         button.addEventListener('click', function() {
         showDetails(pokemon); // Populate modal with Pokémon details
     });
 }
 
     function showDetails(pokemon) {
-    // Populate the modal with Pokémon data when a list item is clicked
-        showModal(
-            pokemon.name, 
-            'Height: ' + pokemon.height * 10 + 'cm', 
-            pokemon.imgUrl
-        );
+        pokemonRepository.loadDetails(pokemon).then(function() { //Loads Pokemon details before showing the modal
+        showModal(pokemon.name, 'Height: ' + pokemon.height * 10 + 'cm', pokemon.imgUrl);
+    });
 }
 
     function loadList() {
@@ -95,7 +70,6 @@ let pokemonRepository = (function() {
         }).then(function (details) {
             item.imgUrl = details.sprites.front_default;
             item.height = details.height;
-            item.types = details.types;
         }).catch(function (e) {
             console.error(e);
         });
@@ -103,10 +77,10 @@ let pokemonRepository = (function() {
     }
 
     return {
-        add:add,
-        getAll:getAll,
-        addListItem,
-        showDetails,
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem,
+        showDetails: showDetails,
         loadList: loadList,
         loadDetails: loadDetails
     };
@@ -114,7 +88,7 @@ let pokemonRepository = (function() {
 
 pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(function(pokemon){
-    pokemonRepository.addListItem(pokemon);
+        pokemonRepository.addListItem(pokemon);
     });
 });
 
