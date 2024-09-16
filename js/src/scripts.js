@@ -43,7 +43,7 @@ let pokemonRepository = (function() {
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function() { //Loads Pokemon details before showing the modal
-        showModal(pokemon.name, 'Height: ' + pokemon.height * 10 + 'cm', pokemon.imgUrl);
+        showModal('Name: ' + pokemon.name, 'Height: ' + pokemon.height * 10 + 'cm', pokemon.imgUrl);
     });
 }
 
