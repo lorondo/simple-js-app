@@ -1,28 +1,34 @@
---Project Description:
-A small web application with HTML, CSS, and JavaScript that loads
-data from an external Pokemon API and enables the viewing of Pokemon data 
-points in detail.
+# Pokédex App
 
---Project Dependencies:
--Bootstrap 
--JavaScript
--Must follow ESLint rules
--Pokemon API - https://pokeapi.co/api/v2/pokemon/?limit=150
+## Project Overview
+The Pokédex App is a web application that allows users to search for Pokémon, view their details, and access additional information such as height and images. The app fetches data from the PokéAPI to provide real-time information about Pokémon.
 
-My role for this project was as a student developer, and I was faced with many
-tasks while putting this application together, including digesting hours of 
-study material to learn the basics of JavaScript while fulfilling assignments 
-to help better understand these concepts that I would implement into this very app.
+## Features
+- **Pokémon Search:** Search for Pokémon by name using an input field.
+- **Pokémon List:** Displays a grid of Pokémon with their names and images.
+- **Pokémon Details:** View detailed information about each Pokémon in a modal window, including their height and image.
+- **Responsive Design:** Built to be responsive using Bootstrap for a seamless experience on mobile and desktop.
 
-Despite its simplicity, this project was challenging, given the pace and 
-sheer amount of material to cover, and the tact I used was to read sources
-beyond the course material to better explain certain concepts, even utilizing 
-chatGPT to break down the code step by step to help cover more ground. Knowing 
-what I know now, I plan to return to studying functions in-depth, as this was 
-the most significant hangup in completing this app promptly.
+## Installation Instructions
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/pokedex-app.git
+    cd pokedex-app
+    ```
+2. Open the `index.html` in your browser:
+    - Simply open the `index.html` file in your browser to view the app. It will automatically load the required CSS and JavaScript files.
 
-Throughout creating this app, I believe I developed a base foundation for 
-JavaScript, though I admit it will take more practice before I can call on these
-concepts without having to reference other material constantly. That being said,
-this task gave me a great deal of practice in research, troubleshooting, and the 
-utilization of AI to assist with my learning.
+## Usage
+- Open the app in your browser.
+- Use the search bar to look for Pokémon by name.
+- Click the "More Details" button to view detailed information about a specific Pokémon.
+
+## Technologies Used
+- **HTML** for structuring the app.
+- **CSS** for custom styling and layout.
+- **JavaScript** for app logic and interactions.
+- **Bootstrap 4** for responsive design.
+- **PokéAPI** for fetching Pokémon data.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
