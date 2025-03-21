@@ -13,7 +13,7 @@ The Pokédex App is a web application that allows users to search for Pokémon, 
 1. Clone the repository:
     ```bash
     git clone https://github.com/lorondo/simple-js-app.git
-    cd pokedex-app
+    cd simple-js-app
     ```
 2. Open the `index.html` in your browser:
     - Simply open the `index.html` file in your browser to view the app. It will automatically load the required CSS and JavaScript files.
